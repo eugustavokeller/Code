@@ -13,6 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PrincipalController@principal');
+
+Route::get('/sobre-nos', 'SobreNosController@sobreNos');
+
+Route::get('/contato', 'ContatoController@contato');
+
+/* Route::get($uri, $callback) | Rota que passa parametro get que recebi uma uri e uma funcção callback */
+
+/* verbo http
+
+get
+post
+put
+patch
+delete
+options
+
+*/
