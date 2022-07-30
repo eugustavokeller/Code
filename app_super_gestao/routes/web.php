@@ -33,15 +33,9 @@ ROTAS IMPLEMENTADAS, PRODUTOS, FORNECEDORES, CLIENTES
 -------------
 */
 Route::prefix('/app')->group(function () {
-    Route::get('/clientes', function () {
-        return 'Clientes';
-    });
-    Route::get('/fornecedores', function () {
-        return 'Fornecedores';
-    });
-    Route::get('/produtos', function () {
-        return 'Produtos';
-    });
+    Route::get('/clientes', function () { return 'Clientes';});
+    Route::get('/fornecedores', function () { return 'Fornecedores';});
+    Route::get('/produtos', function () { return 'Produtos';});
 });
 
 
