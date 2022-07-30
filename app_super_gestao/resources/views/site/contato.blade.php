@@ -1,1 +1,1 @@
-<h3>Contato (view)</h3>
+<h3>CONTATO (VIEW)</h3>
