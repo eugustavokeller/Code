@@ -19,15 +19,20 @@ Route::get('/sobre-nos', 'SobreNosController@sobreNos');
 
 Route::get('/contato', 'ContatoController@contato');
 
-/* Route::get($uri, $callback) | Rota que passa parametro get que recebi uma uri e uma funcção callback */
 
-/* verbo http
+// Route::get('/contato', )
+// nome, categoria, assunto, mensagem {definido com chaves} 
 
-get
-post
-put
-patch
-delete
-options
+Route::get('/contato/{nome}/{categoria}/{assunto}/{mensagem}', function(string $nome, string $categoria, string $assunto, string $mensagem) {
+    echo "Estamos aqui: $nome - $categoria - $assunto - $mensagem";
+});
 
-*/
+
+//verbo http - 
+
+// get
+// post
+// put
+// patch
+// delete
+// options
