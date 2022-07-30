@@ -13,11 +13,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PrincipalController@principal');
+/*
+-------------
+NAVIGATION MENU
+-------------
+*/
 
-Route::get('/sobre-nos', 'SobreNosController@sobreNos');
+Route::get('/', 'PrincipalController@principal')->name('site.index');
+Route::get('/sobre-nos', 'SobreNosController@sobreNos')->name('site.sobre-nos');
+Route::get('/contato', 'ContatoController@contato')->name('site.contato');
 
-Route::get('/contato', 'ContatoController@contato');
+
+Route::get('/login', function () {
+    return 'Login';
+})->name('site.login');
+/*
+-------------
+ROTAS IMPLEMENTADAS, PRODUTOS, FORNECEDORES, CLIENTES
+-------------
+*/
+Route::prefix('/app')->group(function () {
+    Route::get('/clientes', function () {
+        return 'Clientes';
+    });
+    Route::get('/fornecedores', function () {
+        return 'Fornecedores';
+    });
+    Route::get('/produtos', function () {
+        return 'Produtos';
+    });
+});
 
 
 //verbo http - 
