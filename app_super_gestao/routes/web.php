@@ -41,3 +41,7 @@ Route::get('/rota2', function () {
 })->name('site.rota2'); // Redirecionamento na funcão Callback...
 
 // Route::redirect('/rota2', 'rota1');  // Redirecionamento na Route
+
+Route::fallback(function() {
+    echo 'Página não encontrada <a href="'.route('site.index').'">clique aqui</a> para voltar ao menu.';
+});
