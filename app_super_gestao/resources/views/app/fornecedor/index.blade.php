@@ -34,13 +34,28 @@
 <br>
 <br>
 @isset($fornecedores)
-    Fornecedor: {{ $fornecedores[1]['nome'] }}
+    Fornecedor: {{ $fornecedores[0]['nome'] }}
     <br>
-    Status: {{ $fornecedores[1]['status'] }}
+    Status: {{ $fornecedores[0]['status'] }}
     <br>
-    @isset($fornecedores[1]['cnpj'])
-    CNPJ: {{ $fornecedores[1]['cnpj'] }}
+    @isset($fornecedores[0]['cnpj'])
+    CNPJ: {{ $fornecedores[0]['cnpj'] }}
+        @empty($fornecedores[0]['cnpj'])
+            - Vazio
+        @endempty
     @endisset
 @endisset
 
-{{-- @isset para impor uma condição true, @endisset para fechar o bloco --}}
+{{-- @isset para impor uma condição true, @endisset para fechar o bloco, ele verifica se ela existe --}}
+{{-- @empty com condição no if retornando true se a variável estiver vazia, diferente de @isses que verifica se ela existe --}}
+
+{{-- Exemplos de váriaveis com valor vazio:
+    - ''
+    - 0
+    - 0.0
+    - '0'
+    - null
+    - false
+    - array()
+    - $var  variavel declarada sem valor, apenas declarada.
+ --}}
