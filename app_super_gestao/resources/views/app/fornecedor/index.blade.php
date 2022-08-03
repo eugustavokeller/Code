@@ -24,16 +24,23 @@
 {{-- @unless retorna if quando a condição é false --}}
 
 <br>
-Fornecedor: {{ $fornecedores[0]['nome'] }}
+@isset($fornecedores)
+    Fornecedor: {{ $fornecedores[0]['nome'] }}
+    <br>
+    Status: {{ $fornecedores[0]['status'] }}
+    <br>
+    CNPJ: {{ $fornecedores[0]['cnpj'] }}
+@endisset
 <br>
-Status: {{ $fornecedores[0]['status'] }}
 <br>
-@if( !($fornecedores[0]['status'] == 'S'))
-    Fornecedor inativo!! if com condição !
-@endif
-<br>
+@isset($fornecedores)
+    Fornecedor: {{ $fornecedores[1]['nome'] }}
+    <br>
+    Status: {{ $fornecedores[1]['status'] }}
+    <br>
+    @isset($fornecedores[1]['cnpj'])
+    CNPJ: {{ $fornecedores[1]['cnpj'] }}
+    @endisset
+@endisset
 
-@unless($fornecedores[0]['status'] == 'S')
-    Fornecedor inativo!! condição false padrão unless...
-@endunless
-
+{{-- @isset para impor uma condição true, @endisset para fechar o bloco --}}
