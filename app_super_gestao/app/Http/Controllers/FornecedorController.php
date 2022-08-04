@@ -20,6 +20,9 @@ class FornecedorController extends Controller
             ]
         ];
 
+        $msg = isset($fornecedores[0]['cnpj']) ? 'CPNJ Informado!!' : 'CNPJ NÃO Informado!!';
+        echo $msg;
+
         return view('app.fornecedor.index', compact('fornecedores'));
     }
 }
