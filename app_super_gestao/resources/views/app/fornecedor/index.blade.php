@@ -38,12 +38,7 @@
     <br>
     Status: {{ $fornecedores[0]['status'] }}
     <br>
-    @isset($fornecedores[0]['cnpj'])
-    CNPJ: {{ $fornecedores[0]['cnpj'] }}
-        @empty($fornecedores[0]['cnpj'])
-            - Vazio
-        @endempty
-    @endisset
+    CNPJ: {{ $fornecedores[1]['cnpj'] ?? 'Valor não definido' }}
 @endisset
 
 {{-- @isset para impor uma condição true, @endisset para fechar o bloco, ele verifica se ela existe --}}
@@ -59,3 +54,10 @@
     - array()
     - $var  variavel declarada sem valor, apenas declarada.
  --}}
+
+<!--
+    $variavel testada não estiver definida (isset)
+    ou
+    $variavel testada possuir valor null 
+    Entra na condição false do valor default ??
+-->
