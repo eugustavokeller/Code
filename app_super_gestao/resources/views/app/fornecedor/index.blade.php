@@ -2,14 +2,7 @@
 
 
 @php
-    // sintax if no php puro - If retorna quando a condição é true
 
-    /*
-    if() {
-    } elseif() {
-    } else {
-    }
-    */
 @endphp
 
 @if(count($fornecedores) > 0 && count($fornecedores) < 10)
@@ -21,7 +14,7 @@
 
 @endif
 
-{{-- @unless retorna if quando a condição é false --}}
+
 
 <br>
 @isset($fornecedores)
@@ -38,26 +31,21 @@
     <br>
     Status: {{ $fornecedores[0]['status'] }}
     <br>
-    CNPJ: {{ $fornecedores[1]['cnpj'] ?? 'Valor não definido' }}
+    CNPJ: {{ $fornecedores[0]['cnpj'] ?? 'Valor não definido' }}
+    <br>
+    Telefone: ({{ $fornecedores[0]['ddd'] ?? '' }}) {{ $fornecedores[0]['telefone'] ?? '' }}
+    @switch($fornecedores[0]['ddd'])
+        @case('11')
+            São Paulo - SP
+            @break
+        @case('85')
+            Fortaleza - CE
+            @break
+        @case('48')
+            Imbituba - SC
+            @break
+        @default
+            DDD não encontrado
+    @endswitch
 @endisset
 
-{{-- @isset para impor uma condição true, @endisset para fechar o bloco, ele verifica se ela existe --}}
-{{-- @empty com condição no if retornando true se a variável estiver vazia, diferente de @isses que verifica se ela existe --}}
-
-{{-- Exemplos de váriaveis com valor vazio:
-    - ''
-    - 0
-    - 0.0
-    - '0'
-    - null
-    - false
-    - array()
-    - $var  variavel declarada sem valor, apenas declarada.
- --}}
-
-<!--
-    $variavel testada não estiver definida (isset)
-    ou
-    $variavel testada possuir valor null 
-    Entra na condição false do valor default ??
--->
