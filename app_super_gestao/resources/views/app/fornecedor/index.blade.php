@@ -28,7 +28,3 @@
         <hr>
     @endfor
 @endisset
-
-
-
-
