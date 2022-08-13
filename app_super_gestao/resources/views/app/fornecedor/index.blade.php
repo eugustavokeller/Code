@@ -5,7 +5,7 @@
 
 @endphp
 
-@if (count($fornecedores) > 0 && count($fornecedores) < 10)
+@if(count($fornecedores) > 0 && count($fornecedores) < 10)
     <h3>Existem alguns fornecedores cadastrados!</h3>
 @elseif(count($fornecedores) > 10)
     <h3>Existem varios fornecedores cadastrados!!!</h3>
@@ -17,7 +17,7 @@
 
 @isset($fornecedores)
 
-    @foreach ($fornecedores as $indice => $fornecedor)        
+    @forelse ($fornecedores as $indice => $fornecedor)        
         Fornecedor: {{ $fornecedor['nome'] }}
         <br>
         Status: {{ $fornecedor['status'] }}
@@ -26,5 +26,7 @@
         <br>
         Telefone: ({{ $fornecedor['ddd'] ?? '' }}) {{ $fornecedor['telefone'] ?? '' }}
         <hr>
-    @endforeach    
+        @empty
+            Não existem fornecedores Cadastrados!!!
+    @endforelse    
 @endisset
