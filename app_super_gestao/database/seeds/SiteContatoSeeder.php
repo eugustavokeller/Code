@@ -12,11 +12,12 @@ class SiteContatoSeeder extends Seeder
      */
     public function run()
     {
-        $contato = new SiteContato();
-        $contato->nome = '';
-        $contato->telefone = '';
-        $contato->email = '';
-        $contato->motivo_contato = '';
-        $contato->mensagem = '';
+        factory(SiteContato::class, 100)->create();
+        // $contato = new SiteContato();
+        // $contato->nome = '';
+        // $contato->telefone = '';
+        // $contato->email = '';
+        // $contato->motivo_contato = '';
+        // $contato->mensagem = '';
     }
 }
