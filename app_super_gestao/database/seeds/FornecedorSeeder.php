@@ -12,7 +12,7 @@ class FornecedorSeeder extends Seeder
      */
     public function run()
     {
-        //
+        
         $fornecedor = new Fornecedor();
         $fornecedor->nome = 'Fornecedor 100';
         $fornecedor->site = 'forncedor100.com.br';
