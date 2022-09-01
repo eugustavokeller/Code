@@ -28,6 +28,6 @@ class LogAcessoMiddleware
         
         $resposta = $next($request);
         $resposta->setStatusCode(201, 'O status da resposta e o texto foram modificados!!!');
-        dd($resposta);
+        return($resposta);
     }
 }
