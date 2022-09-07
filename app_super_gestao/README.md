@@ -6,4 +6,4 @@ Projeto em desenvolvimento!
 
 App Super Gestão
 
-![App Super Gestao](app_super_gestao\public\img\logo.png)
+![App Super Gestao](https://github.com/eugustavokeller/Code/blob/main/app_super_gestao/public/img/logo.png)
