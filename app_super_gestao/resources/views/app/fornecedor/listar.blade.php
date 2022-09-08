@@ -19,7 +19,7 @@
 
         <div class="informacao-pagina">
             <div style="width: 90%; margin-left: auto; margin-right: auto">
-                <table border>
+                <table style="margin-top: 60px" border="1" width="100%">
                     <thead>
                         <tr>
                             <th>Nome</th>
