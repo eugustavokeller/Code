@@ -41,6 +41,12 @@
                     </tbody>
                 </table>
                 {{ $fornecedores->appends($request)->links() }}
+                <br>
+                Total de registros por páginas: {{ $fornecedores->count() }}
+                <br>
+                Total de registros da consulta: {{ $fornecedores->total() }}
+                <br>
+                Consulta do registro {{ $fornecedores->firstItem()}} ao {{ $fornecedores->lastItem()}}
             </div>
         </div>
     </div>

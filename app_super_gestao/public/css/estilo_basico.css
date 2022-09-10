@@ -214,4 +214,13 @@ span {
 
 .pagination ul {
     list-style-type: none;
+    font-size:  bold, 5px;
+}
+
+.active {
+    background: #2a9ee2;
+}
+
+span.page-link {
+    color: white;
 }
