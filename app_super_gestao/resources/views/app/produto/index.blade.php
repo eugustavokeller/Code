@@ -1,6 +1,6 @@
 @extends('app.layouts.basico')
 
-@section('titulo', 'Fornecedor')
+@section('titulo', 'Produto')
 
 @section('conteudo')
     <div class="conteudo-pagina">
@@ -42,7 +42,12 @@
                 </table>
                 {{ $produtos->appends($request)->links() }}
                 <br>
-                Lista do registro {{ $produtos->firstItem()}} ao {{ $produtos->lastItem()}}
+                @if ($produtos->firstItem() == 0)
+                    Nenhum registo encontrado.
+                @endif
+                @if ($produtos->firstItem() != 0)
+                    Lista do registro {{ $produtos->firstItem() }} ao {{ $produtos->lastItem() }}
+                @endif
                 <br>
                 {{ $produtos->count() }} registros de {{ $produtos->total() }}.
             </div>
