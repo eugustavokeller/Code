@@ -15,7 +15,6 @@
             </ul>
         </div>
         <div class="informacao-pagina">
-            {{ $msg ?? '' }}
             <div style="width: 90%; margin-left: auto; margin-right: auto">
                 <table style="margin-top: 60px" border="1" width="100%">
                     <thead>

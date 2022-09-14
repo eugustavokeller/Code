@@ -19,17 +19,26 @@ Route::post('/login', 'LoginController@autenticar')->name('site.login');
 APPLICATION
 -------------*/
 Route::middleware('autenticacao:padrao,visitante')->prefix('/app')->group(function () {
+    
+    // home
     Route::get('/home', 'HomeController@index')->name('app.home');
+    // sair
     Route::get('/sair', 'LoginController@sair')->name('app.sair');
+
+    // clientes
     Route::get('/cliente', 'ClienteController@index')->name('app.cliente');
+
+    // fornecedores
     Route::get('/fornecedor', 'FornecedorController@index')->name('app.fornecedor');
     Route::post('/fornecedor/listar', 'FornecedorController@listar')->name('app.fornecedor.listar');
     Route::get('/fornecedor/listar/{msg?}', 'FornecedorController@listar')->name('app.fornecedor.listar');
     Route::get('/fornecedor/adicionar/', 'FornecedorController@adicionar')->name('app.fornecedor.adicionar');
     Route::post('/fornecedor/adicionar', 'FornecedorController@adicionar')->name('app.fornecedor.adicionar');
     Route::get('/fornecedor/editar/{id}/{msg?}', 'FornecedorController@editar')->name('app.fornecedor.editar');
-    Route::get('/fornecedor/excluir/{id}/{msg?}', 'FornecedorController@excluir')->name('app.fornecedor.excluir');
-    Route::get('/produto', 'ProdutoController@index')->name('app.produto');
+    Route::get('/fornecedor/excluir/{id}', 'FornecedorController@excluir')->name('app.fornecedor.excluir');
+
+    // produtos
+    Route::resource('/produto', 'ProdutoController');
 });
 
 /*-------------
