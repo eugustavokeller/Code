@@ -12,7 +12,7 @@
         
         <div class="menu">
             <ul>
-                <li><a href="">Novo</a></li>
+                <li><a href="{{ route('produto.index') }}">Voltar</a></li>
                 <li><a href="">Consulta</a></li>
             </ul>
         </div>
@@ -25,11 +25,17 @@
                     @csrf
                     <input type="text" value="" name="nome" placeholder="Nome" class="borda-preta">
                     
-                    <input type="text" value="" name="site" placeholder="Site" class="borda-preta">
+                    <input type="text" value="" name="descricao" placeholder="Descrição" class="borda-preta">
                     
-                    <input type="text" value="" name="uf" placeholder="UF" class="borda-preta">
-                    
-                    <input type="text" value="" name="email" placeholder="E-mail" class="borda-preta">
+                    <input type="text" value="" name="peso" placeholder="Peso" class="borda-preta">
+
+                    <select name="unidade_id">
+                        <option> -- Selecione a Unidade de Medida -- </option>
+
+                        @foreach ($unidades as $unidade)    
+                            <option value="{{ $unidade->id }}">{{ $unidade->descricao }}</option>
+                        @endforeach
+                    </select>
                     
                     <button type="submit" class="borda-preta">Cadastrar</button>
                 </form>
