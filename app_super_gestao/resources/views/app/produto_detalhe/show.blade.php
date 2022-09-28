@@ -1,13 +1,13 @@
 @extends('app.layouts.basico')
 
-@section('titulo', 'Produto')
+@section('titulo', 'Detalhe do Produto')
 
 @section('conteudo')
 
     <div class="conteudo-pagina">
 
         <div class="titulo-pagina-2">
-            <p>Produto - Adicionar</p>
+            <p>Produto - Detalhes</p>
         </div>
         
         <div class="menu">
@@ -24,18 +24,20 @@
                 <table border="1" style="test-align: left">
                     <tr>
                         <td>ID</td>
-                        <td>Nome</td>
-                        <td>Peso</td>
-                        <td>Descrição</td>
-                        <td>Unidade</td>
+                        <td>Produto ID</td>
+                        <td>Comprimento</td>
+                        <td>Largura</td>
+                        <td>Altura</td>
+                        <td>Unidade ID</td>
                         
                     </tr>
                     <tr>
-                        <td>{{ $produto->id}}</td>
-                        <td>{{ $produto->nome}}</td>
-                        <td>{{ $produto->peso}} Kg</td>
-                        <td>{{ $produto->descricao}}</td>
-                        <td>{{ $produto->unidade_id}}</td>
+                        <td>{{ $produto_detalhe->id}}</td>
+                        <td>{{ $produto_detalhe->produto_id}}</td>
+                        <td>{{ $produto_detalhe->comprimento}} cm</td>
+                        <td>{{ $produto_detalhe->largura}} cm</td>
+                        <td>{{ $produto_detalhe->altura}} cm</td>
+                        <td>{{ $produto_detalhe->unidade_id}}</td>
                     </tr>
                     
                 </table>
